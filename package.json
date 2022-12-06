@@ -1,0 +1,88 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "homeoffice",
+  "title": "Homeoffice",
+  "description": "Homeoffice is an extension to select days for home office and open with a mail program.",
+  "icon": "extension-icon.png",
+  "author": "tm.wrnr",
+  "license": "MIT",
+  "categories": [
+    "Communication",
+    "Productivity"
+  ],
+  "commands": [
+    {
+      "name": "index",
+      "title": "Homeoffice",
+      "description": "Template for showing a static list and a detail view",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "app",
+      "label": "Mail App",
+      "title": "Mail App",
+      "description": "Mail App zum öffnen",
+      "type": "appPicker",
+      "default": "Mail",
+      "required": true
+    },
+    {
+      "name": "homeOfficeDays",
+      "label": "Tage pro Woche",
+      "title": "Tage pro Woche",
+      "description": "Homeoffice Tage pro Woche",
+      "type": "textfield",
+      "required": true,
+      "default": "2"
+    },
+    {
+      "name": "to",
+      "label": "Adressat",
+      "title": "Adressat",
+      "description": "Adressat der E-Mail",
+      "type": "textfield",
+      "required": true
+    },
+    {
+      "name": "subject",
+      "label": "Betreff",
+      "title": "Betreff",
+      "description": "Betreff der E-Mail",
+      "type": "textfield",
+      "default": "Homeoffice",
+      "required": true
+    },
+    {
+      "name": "name",
+      "label": "Name",
+      "title": "Name",
+      "description": "Dein Name",
+      "type": "textfield",
+      "required": true
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.44.0",
+    "dayjs": "^1.11.6",
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
