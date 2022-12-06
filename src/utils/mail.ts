@@ -5,7 +5,7 @@ import { Preferences, SelectedDaysPerWeek } from "../types";
 
 export const openMail = (body: string) => {
   const { app, subject, to } = getPreferenceValues<Preferences>();
-  exec(`open -a ${app.path}  "mailto:${to}?subject=${subject}&body=${encodeURIComponent(body)}"`);
+  exec(`open -a "${app.name}.app"  "mailto:${to}?subject=${subject}&body=${encodeURIComponent(body)}"`);
 };
 
 export const getMailBody = (selected: SelectedDaysPerWeek): string => {
